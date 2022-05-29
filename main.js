@@ -6,7 +6,7 @@ let res
     }
 
     document.getElementById("searchbtn").disabled=true;
-	document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
+	document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Por favor espere...';
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -17,14 +17,14 @@ let res
   .then(function(myJson) {
     res = myJson;
     document.getElementById("searchbtn").disabled=false;
-	document.getElementById("searchbtn").innerHTML=' Shorten it';
+	document.getElementById("searchbtn").innerHTML=' Acortar';
     if(res.key!=="")
     document.getElementById("result").innerHTML=window.location.host+res.key;
     $('#exampleModal').modal('show')
   }).catch(function(err){alert("Error desconocido. Intente nuevamente!");
   console.log(err);
   document.getElementById("searchbtn").disabled=false;
-	document.getElementById("searchbtn").innerHTML=' Shorten it';})
+	document.getElementById("searchbtn").innerHTML=' Acortar';})
   }
   function copyurl (id, attr) {
     let target = null;
